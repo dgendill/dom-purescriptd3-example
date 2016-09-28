@@ -10,17 +10,19 @@ import Graphics.D3.Selection (selectAll, bindData, enter, style', text', append,
 array :: Array Number
 array = [4.0, 8.0, 15.0, 16.0, 23.0, 42.0, 11.2]
 
+infixl 4 bind as ..
+
 main :: forall e. Eff (d3 :: D3 | e) (Selection Number)
 main = do
   x <- linearScale
-    >>= domain [0.0, Util.max' id array]
-    >>= range [0, 820]
-    >>= toFunction
+    .. domain [0.0, Util.max' id array]
+    .. range [0, 820]
+    .. toFunction
 
   rootSelect ".chart"
-    >>= selectAll "div"
-      >>= bindData array
-    >>= enter >>= append "div"
-      >>= style' "width" (\d -> show (x d) <> "px")
-      >>= style' "background" (\d -> "red")
-      >>= text' show
+    .. selectAll "div"
+      .. bindData array
+    .. enter .. append "div"
+      .. style' "width" (\d -> show (x d) <> "px")
+      .. style' "background" (\d -> "red")
+      .. text' show

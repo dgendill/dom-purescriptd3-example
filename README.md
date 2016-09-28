@@ -26,6 +26,6 @@ If you visit http://localhost:1337 you should see a simple stair-step chart.
 
 If you want to make changes to `Main.src` and see the changes in the browser, you can run `npm run watch` in a separate terminal.
 
-# Notes
+# Note
 
-It should be noted, that I don't think the (..) alias for `bind` works anymore.  Use `bind`'s >>= alias instead.
+The (..) is alias for `bind` and is defined in Main.purs.
