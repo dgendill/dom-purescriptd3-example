@@ -10,10 +10,6 @@ import Graphics.D3.Selection (selectAll, bindData, enter, style', text', append,
 array :: Array Number
 array = [4.0, 8.0, 15.0, 16.0, 23.0, 42.0, 11.2]
 
--- Alias .. as bind
--- https://github.com/purescript/purescript-prelude/blob/master/src/Control/Bind.purs#L49
-infixr 1 bind as ..
-
 main :: forall e. Eff (d3 :: D3 | e) (Selection Number)
 main = do
   x <- linearScale
