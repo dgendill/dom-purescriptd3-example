@@ -1,0 +1,16 @@
+{
+  "name": "dom-purescriptd3-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "watch" : "pulp --watch build --to dist/bundle.js",
+    "build" : "pulp build --to dist/bundle.js",
+    "server" : "pulp server"
+  },
+  "author": "",
+  "license": "MIT"
+}
